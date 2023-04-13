@@ -1,4 +1,3 @@
--f https://download.pytorch.org/whl/torch_stable.html
 numpy
 pandas
 python-dateutil==2.8.2
