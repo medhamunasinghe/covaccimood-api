@@ -1,5 +1,5 @@
 
-FROM python:3.7
+FROM python:3.7-alpine
 
 COPY ./requirements/requirements.txt ./requirements/requirements.txt
 RUN pip3 install -r requirements/requirements.txt
@@ -10,4 +10,4 @@ COPY BertCNN_bestModel.bin /
 
 EXPOSE 8000
 
-CMD ["uvicorn", "sentiment_analyzer.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "sentiment_analyzer.main:app", "--reload", "--host", "0.0.0.0"]
