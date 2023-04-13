@@ -10,5 +10,5 @@ uvicorn==0.18.2
 pydantic==1.9.1
 transformers
 emoji
-re
+regex
 wordsegment
