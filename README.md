@@ -1,0 +1,1 @@
+# covaccimood-api
