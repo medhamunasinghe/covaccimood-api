@@ -4,6 +4,7 @@ FROM python:3.9-alpine
 COPY ./requirements/requirements.txt ./requirements/requirements.txt
 RUN pip install pip==23.0.1
 RUN pip install -r requirements/requirements.txt
+RUN pip install numpy
 RUN pip --no-cache-dir install torch
 
 COPY ./sentiment_analyzer /sentiment_analyzer
