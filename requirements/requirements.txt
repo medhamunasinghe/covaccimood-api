@@ -1,4 +1,6 @@
-pandas==1.4.3
+-f https://download.pytorch.org/whl/torch_stable.html
+numpy
+pandas
 python-dateutil==2.8.2
 pytz==2022.1
 six==1.16.0
@@ -7,6 +9,6 @@ fastapi==0.78.0
 uvicorn==0.18.2
 pydantic==1.9.1
 transformers
-emoji==2.2.0
+emoji
 re
-wordsegment==1.3.1
+wordsegment
