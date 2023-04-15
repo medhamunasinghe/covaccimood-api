@@ -1,5 +1,5 @@
 
-FROM python:3.7-alpine
+FROM python:3.7
 
 COPY ./requirements/requirements.txt ./requirements/requirements.txt
 RUN pip3 install -r requirements/requirements.txt

@@ -41,10 +41,13 @@ irrelevant_dict: Dict[str, float] = {'negative': 0, 'neutral': 0, 'positive': 0}
 
 @app.post("/predict", response_model=SentimentResponse)
 def predict(request: SentimentRequest, model: Model = Depends(get_model)):
+    # classify sentiment using the model
+    sentiment, confidence, probabilities = model.predict(request.text)
     # check if request text contains any covid-19 vacination related word
     if any(keyword in request.text for keyword in keywords):
-        sentiment, confidence, probabilities = model.predict(request.text)
+        # if the user text is relevant 
         response = {'sentiment': sentiment, 'confidence': confidence, 'probabilities': probabilities} 
     else:
-        response = {'sentiment': 'Irrelevant for Covid-19 vaccination', 'confidence': 1, 'probabilities': irrelevant_dict}
+        # if the user text is not relevant send sentiment with a message
+        response = {'sentiment': sentiment + ' but not relevant for Covid-19 vaccination', 'confidence': confidence, 'probabilities': probabilities}
     return response 
