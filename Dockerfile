@@ -6,7 +6,7 @@ RUN pip3 install -r requirements/requirements.txt
 RUN pip3 --no-cache-dir install torch
 
 COPY ./sentiment_analyzer /sentiment_analyzer
-COPY BERTwithDNNmodel_state.bin /
+COPY BertCNN_bestModel.bin /
 
 EXPOSE 8000
 
