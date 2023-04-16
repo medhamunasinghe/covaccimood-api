@@ -1,13 +1,24 @@
-
+# Base image
 FROM python:3.10
 
-COPY ./requirements/requirements.txt ./requirements/requirements.txt
-RUN pip3 install -r requirements/requirements.txt
-RUN pip3 --no-cache-dir install torch
+# Set the working directory
+WORKDIR /app
 
-COPY ./sentiment_analyzer ./sentiment_analyzer
-COPY BertCNN_bestModel.bin .
+# Copy the requirements file to the working directory
+COPY requirements/requirements.txt .
 
+# install pip
+RUN pip install pip==23.0.1
+
+# Install dependencies
+RUN pip install -r requirements.txt
+RUN pip --no-cache-dir install torch
+
+# Copy the project directory to the working directory
+COPY . .
+
+# Expose port 8000 for the application
 EXPOSE 8000
 
-CMD ["uvicorn", "sentiment_analyzer.main:app", "--reload", "--host", "0.0.0.0"]
+# Run the application using uvicorn
+CMD ["uvicorn", "sentiment_analyzer.main:app", "--host", "0.0.0.0", "--port", "8000"]
