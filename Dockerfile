@@ -12,7 +12,7 @@ RUN pip install pip==23.0.1
 
 # Install dependencies
 RUN pip install -r requirements.txt
-RUN pip --no-cache-dir install torch
+RUN pip --no-cache-dir install torch==1.12.0
 
 # Copy the project directory to the working directory
 COPY . .
