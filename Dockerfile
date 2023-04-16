@@ -13,12 +13,12 @@ RUN pip install pip==23.0.1
 # Install dependencies
 RUN pip install -r requirements.txt
 RUN pip --no-cache-dir install torch
-RUN ls
-RUN echo "ls was here"
 
 # Copy the project directory to the working directory
 COPY . .
 COPY BertCNN_bestModel.bin .
+RUN ls
+RUN echo "ls was here"
 
 # Expose port 8000 for the application
 EXPOSE 8000

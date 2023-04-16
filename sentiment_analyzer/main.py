@@ -4,7 +4,7 @@ from fastapi import Depends, FastAPI
 from pydantic import BaseModel
 
 import sys
-sys.path.insert(0, '../sentiment_analyzer/classifier')
+sys.path.insert(0, './sentiment_analyzer/classifier')
 from sentiment_analyzer.classifier.model import Model, get_model
 
 app = FastAPI()
