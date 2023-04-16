@@ -12,4 +12,3 @@ transformers
 emoji
 regex
 wordsegment
-torch==1.12.0
