@@ -18,7 +18,6 @@ RUN pip install -r requirements.txt
 COPY . .
 COPY BertCNN_bestModel.bin .
 RUN ls
-RUN pip show torch
 RUN echo "ls was here"
 
 # Expose port 8000 for the application
