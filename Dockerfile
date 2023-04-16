@@ -17,7 +17,6 @@ RUN pip --no-cache-dir install torch
 # Copy the project directory to the working directory
 COPY . .
 COPY BertCNN_bestModel.bin .
-COPY BertCNN_bestModel.bin ./sentiment_analyzer/
 
 # Expose port 8000 for the application
 EXPOSE 8000
