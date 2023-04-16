@@ -7,7 +7,7 @@ from sentiment_analyzer.classifier.sentiment_classifier import BertCNN
 from sentiment_analyzer.classifier.preprocessor import Preprocessor
 
 pretrained_model_name = 'bert-base-cased'
-best_model_state = "BertCNN_bestModel.bin"
+best_model_state = "../BertCNN_bestModel.bin"
 class_names = ['negative', 'neutral', 'positive']
 MAX_LEN = 160
 
