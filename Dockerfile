@@ -5,8 +5,7 @@ COPY ./requirements/requirements.txt ./requirements/requirements.txt
 RUN pip3 install -r requirements/requirements.txt
 RUN pip3 --no-cache-dir install torch
 
-WORKDIR /
-COPY sentiment_analyzer .
+COPY ./sentiment_analyzer ./sentiment_analyzer
 COPY BertCNN_bestModel.bin .
 
 EXPOSE 8000
