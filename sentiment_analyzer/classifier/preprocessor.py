@@ -29,18 +29,8 @@ class Preprocessor:
           tweet = '@USERS ' + tweet
       return tweet
 
-  # seperating the hashtags in to seperate words
-  def hashtagToWords(self,tweet):
-      sent_tokens = tweet.split(' ')
-      for j, t in enumerate(sent_tokens):
-          if t.find('#') == 0:
-              sent_tokens[j] = ' '.join(wordsegment.segment(t))
-      tweet = ' '.join(sent_tokens)
-      return tweet
-
 
   def process_tweet(self,tweet):
-
     #Remove www.* or https?://*
     tweet = re.sub('((www\.[^\s]+)|(https?://[^\s]+))\s+','',tweet)
     tweet = re.sub('\s+((www\.[^\s]+)|(https?://[^\s]+))','',tweet)
@@ -56,9 +46,6 @@ class Preprocessor:
     tweet = re.sub(r"’", "'", tweet)
     #Replacing @USER
     tweet = self.replace_usernames(tweet)
-    #Segmenting tweets
-    #https://github.com/grantjenks/python-wordsegment
-    tweet = self.hashtagToWords(tweet)
     #Remove additional white spaces
     tweet = re.sub('[\s]+', ' ', tweet)
     #Replace ampersands
